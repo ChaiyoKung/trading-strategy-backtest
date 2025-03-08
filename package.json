@@ -4,12 +4,16 @@
   "type": "module",
   "scripts": {
     "dev": "bun run src/main.ts",
-    "dev:watch": "bun run --watch src/main.ts"
+    "dev:watch": "bun run --watch src/main.ts",
+    "format": "prettier \"src/**/*.ts\" --write"
   },
   "devDependencies": {
     "@types/bun": "latest"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "prettier": "^3.5.3"
   }
 }
