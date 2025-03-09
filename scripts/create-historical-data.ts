@@ -4,8 +4,14 @@ import { write } from "bun";
 import { printOhlcvSample } from "../utils/print-ohlcv-sample";
 import { z } from "zod";
 
-const symbol = "BTC/USDT:USDT";
-const timeframe = "1d";
+const args = process.argv.slice(2);
+if (args.length < 2) {
+  console.error('Usage: bun run ./scripts/create-historical-data.ts "<symbol>" "<timeframe>"');
+  process.exit(1);
+}
+
+const symbol = args[0];
+const timeframe = args[1];
 
 const exchange = new bingx();
 const maxLimit = 1440;
