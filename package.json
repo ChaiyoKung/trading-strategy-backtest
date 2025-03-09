@@ -1,10 +1,10 @@
 {
   "name": "trading-strategy-backtest",
-  "module": "src/main.ts",
+  "module": "index.ts",
   "type": "module",
   "scripts": {
-    "dev": "bun run src/main.ts",
-    "dev:watch": "bun run --watch src/main.ts",
+    "dev": "bun run index.ts",
+    "dev:watch": "bun run --watch index.ts",
     "format": "prettier \"src/**/*.ts\" --write"
   },
   "devDependencies": {
