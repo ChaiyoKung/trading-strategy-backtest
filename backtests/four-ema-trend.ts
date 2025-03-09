@@ -32,7 +32,6 @@ type Position = "none" | "long" | "short";
 let position: Position = "none";
 let entryPrice = 0;
 
-const historical = [];
 for (let i = 1; i < minLenght; i++) {
   const timestamp = timestamps[i];
 
@@ -47,15 +46,6 @@ for (let i = 1; i < minLenght; i++) {
   const prevShortEma = shortEmas[i - 1];
   const prevLongEma = longEmas[i - 1];
   const prevLongestEma = longestEmas[i - 1];
-
-  historical.push({
-    date: timestamp,
-    close: parseFloat(close.toFixed(1)),
-    shortestEma: parseFloat(shortestEma.toFixed(1)),
-    shortEma: parseFloat(shortEma.toFixed(1)),
-    longEma: parseFloat(longEma.toFixed(1)),
-    longestEma: parseFloat(longestEma.toFixed(1)),
-  });
 
   const isUpTrend = shortestEma > shortEma && shortEma > longEma && longEma > longestEma;
   const isPrevUpTrend = prevShortestEma > prevShortEma && prevShortEma > prevLongEma && prevLongEma > prevLongestEma;
