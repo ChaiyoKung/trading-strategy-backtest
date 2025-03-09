@@ -16,6 +16,7 @@
   "dependencies": {
     "ccxt": "^4.4.65",
     "prettier": "^3.5.3",
+    "technicalindicators": "^3.1.0",
     "zod": "^3.24.2"
   }
 }
