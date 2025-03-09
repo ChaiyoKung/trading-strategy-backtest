@@ -1,15 +1,25 @@
-import { bingx } from "ccxt";
+import { bingx, type OHLCV } from "ccxt";
 import { parseOhlcv } from "./utils/parse-ohlcv";
 import { write } from "bun";
 import { printOhlcvSample } from "./utils/print-ohlcv-sample";
+import { z } from "zod";
 
 const symbol = "BTC/USDT:USDT";
 const timeframe = "1d";
 
 const exchange = new bingx();
 const maxLimit = 1440;
-const ohlcv = await exchange.fetchOHLCV(symbol, timeframe, 0, maxLimit);
-const parsedOhlcv = parseOhlcv(ohlcv);
+const ohlcvs: OHLCV[] = [];
+let since: number = 0;
+while (true) {
+  const ohlcv = await exchange.fetchOHLCV(symbol, timeframe, since, maxLimit);
+  const latestTimestamp = z.number().parse(ohlcv[ohlcv.length - 1][0]);
+  if (latestTimestamp === since) break;
+  ohlcvs.push(...ohlcv);
+  since = latestTimestamp;
+}
+
+const parsedOhlcv = parseOhlcv(ohlcvs);
 
 printOhlcvSample(parsedOhlcv);
 
