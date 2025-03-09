@@ -18,3 +18,9 @@ bun run ./scripts/create-historical-data.ts "BTC/USDT:USDT" "1d"
 bun run ./scripts/create-historical-data.ts "BTC/USDT:USDT" "4h"
 bun run ./scripts/create-historical-data.ts "BTC/USDT:USDT" "15m"
 ```
+
+Run for backtest:
+
+```bash
+bun run ./backtests/four-ema-trend.ts
+```
