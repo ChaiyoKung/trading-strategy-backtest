@@ -25,3 +25,4 @@ printOhlcvSample(parsedOhlcv);
 
 const fileName = `data/${symbol.replace("/", "-").replace(":", "-")}-${timeframe}.json`;
 await write(fileName, JSON.stringify(parsedOhlcv));
+console.log(`Saved to "${fileName}"`);
