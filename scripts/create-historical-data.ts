@@ -1,7 +1,7 @@
 import { bingx, type OHLCV } from "ccxt";
-import { parseOhlcv } from "./utils/parse-ohlcv";
+import { parseOhlcv } from "../utils/parse-ohlcv";
 import { write } from "bun";
-import { printOhlcvSample } from "./utils/print-ohlcv-sample";
+import { printOhlcvSample } from "../utils/print-ohlcv-sample";
 import { z } from "zod";
 
 const symbol = "BTC/USDT:USDT";
