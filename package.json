@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "bun run index.ts",
     "dev:watch": "bun run --watch index.ts",
-    "format": "prettier \"src/**/*.ts\" --write"
+    "format": "prettier \"index.ts\" \"backtests/**/*.ts\" \"scripts/**/*.ts\" \"utils/**/*.ts\" --write"
   },
   "devDependencies": {
     "@types/bun": "latest"
