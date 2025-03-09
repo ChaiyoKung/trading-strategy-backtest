@@ -1,5 +1,5 @@
 import { EMA } from "technicalindicators";
-import ohlcv from "../data/BTC-USDT-USDT-1d.json";
+import ohlcv from "../data/BTC-USDT-USDT-4h.json";
 import { printOhlcvSample } from "../utils/print-ohlcv-sample";
 
 let timestamps = ohlcv.map((candle) => candle.timestamp);
