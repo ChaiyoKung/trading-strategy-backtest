@@ -18,6 +18,7 @@ while (true) {
   ohlcvs.push(...ohlcv);
   since = latestTimestamp;
 }
+ohlcvs.pop(); // Remove the latest one because it's not closed yet
 
 const parsedOhlcv = parseOhlcv(ohlcvs);
 
